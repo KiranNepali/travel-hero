@@ -109,7 +109,7 @@ const Hero1 = () => {
             className="min-w-[100vw] z-[30] min-h-[100vh] overflow-hidden"
           >
             <div className="w-full h-full flex justify-center items-center relative">
-              <div className="w-full h-screen bg-black opacity-[0.4] absolute top-0 left-0"></div>
+              <div className="w-full h-screen bg-black opacity-[0] absolute top-0 left-0"></div>
               <Image
                 src={sliderDat.img}
                 alt={sliderDat.name}
@@ -137,7 +137,9 @@ const Hero1 = () => {
         {/* ham  */}
         <div className="h-full hidden  md:flex justify-center text-sm font-medium items-center gap-6 text-nowrap">
           {["About", "Purchased Confirm", "Contact"].map((item) => (
-            <span className="cursor-pointer hover:scale-110 duration-200 text-zinc-100 hover:text-white">{item}</span>
+            <span className="cursor-pointer hover:scale-110 duration-200 text-zinc-100 hover:text-white">
+              {item}
+            </span>
           ))}
         </div>
       </div>
