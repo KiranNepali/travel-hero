@@ -1,19 +1,12 @@
-// import Hero1 from "@/components/website/Hero1";
-// import Hero2 from "@/components/website/Hero2";
-// import Hero3 from "@/components/website/Hero3";
-// import TrekHero from "@/components/website/TrekHero";
-// import Try from "@/components/website/Try";
-import TryTransition from "@/components/website/TryTransition";
+"use client";
+import HomeMain from "@/components/website/Home/HomeMain";
+// import LocomotiveScroll from "locomotive-scroll";
+// const locomotiveScroll = new LocomotiveScroll();
 
 export default function Home() {
   return (
     <main className="">
-      {/* <TrekHero /> */}
-      {/* <Hero1 /> */}
-      {/* <Hero2 /> */}
-      {/* <Hero3 /> */}
-      {/* <Try /> */}
-      <TryTransition />
+      <HomeMain />
     </main>
   );
 }

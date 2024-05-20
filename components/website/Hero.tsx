@@ -14,10 +14,14 @@ import HeroPersonImage from "@/public/HeroImage/HeroPerson.png";
 import LogoImage from "@/public/travel-logo.png";
 
 import Image from "next/image";
+import PopularTrek from "./Home/PopularTrek";
+import Service from "./Home/Service";
+import Trending from "./Home/Trending";
+import Footer from "./Footer";
 type Props = {};
 
 gsap.registerPlugin(ScrollTrigger);
-export default function TryTransition({}: Props) {
+export default function Hero({}: Props) {
   // for navbar animation
   const sideNavRef = useRef(null);
   const [openNav, setOpenNav] = useState(false);
@@ -25,6 +29,9 @@ export default function TryTransition({}: Props) {
   const handleHam = () => {
     const tl1 = gsap.timeline();
     if (!openNav) {
+      gsap.to([".ham1", ".ham2"], {
+        backgroundColor: "black",
+      });
       tl1.to(
         ".ham1",
         {
@@ -71,6 +78,10 @@ export default function TryTransition({}: Props) {
     }
     if (openNav) {
       const tl2 = gsap.timeline();
+      gsap.to([".ham1", ".ham2"], {
+        delay: 1,
+        backgroundColor: "white",
+      });
       gsap.to(".nav-links", {
         marginLeft: "-30px",
         marginTop: "30px",
@@ -359,6 +370,10 @@ export default function TryTransition({}: Props) {
     const delta = e.deltaY;
     //  scroll down
     if (delta > 0) {
+      gsap.to([".ham1", ".ham2"], {
+        delay: 0.5,
+        backgroundColor: "black",
+      });
       gsap.to(openContainerRef.current, {
         top: 0,
         height: "auto",
@@ -441,11 +456,11 @@ export default function TryTransition({}: Props) {
       {/* side nav  */}
       <div
         ref={sideNavRef}
-        className="w-full h-screen  justify-center items-center hidden text-white z-[500] fixed top-0 right-[-100%] bg-zinc-900"
+        className="w-full h-screen  justify-center items-center hidden text-zinc-800 z-[500] fixed top-0 right-[-100%] bg-white"
       >
         <div className="flex justify-center items-center   flex-col h-full w-full">
           <div className="flex flex-col md:flex-row justify-center h-full items-center gap-[4%] w-full text-3xl font-medium">
-            {["About", "Purchased Confirm", "Contact"].map((item, index) => (
+            {["Home", "Services", "Destinations"].map((item, index) => (
               <div
                 key={index}
                 onMouseEnter={() => handleHoverNav(index)}
@@ -455,7 +470,7 @@ export default function TryTransition({}: Props) {
                 <div
                   className={`nav-link-container hover-link-${index} flex w-full h-full flex-col`}
                 >
-                  <span className="cursor-pointer  text-zinc-100">{item}</span>
+                  <span className="cursor-pointer">{item}</span>
                   <span className="cursor-pointer bg-clip-text text-transparent bg-gradient-to-t from-[#97efe9]  via-[#e34df4] to-[#6e5ce9] ">
                     {item}
                   </span>
@@ -559,7 +574,7 @@ export default function TryTransition({}: Props) {
       {/* BOTTOM  */}
       <div className="px-[10%] z-[100]  w-full mx-auto fixed bottom-0 left-0 h-[7rem] flex justify-between items-center">
         {/* ham  */}
-        <div className="h-full hidden  md:flex justify-center text-sm font-medium items-center gap-6 text-nowrap">
+        <div className="h-full hidden   justify-center text-sm font-medium items-center gap-6 text-nowrap">
           {["About", "Purchased Confirm", "Contact"].map((item) => (
             <span className="cursor-pointer w-full hover:scale-110 duration-200 text-zinc-100 hover:text-white">
               {item}
@@ -567,27 +582,21 @@ export default function TryTransition({}: Props) {
           ))}
         </div>
         {/* bottom dot  */}
-        <div className="w-full md:w-auto text-end text-[12px] text-white">
-          {" "}
+        <div className="w-full hidden  text-end text-[12px] text-white">
           &copy; Copyright WebX
         </div>
       </div>
       {/* {slide 5} */}
       <div
         ref={openContainerRef}
-        className="w-full  h-0  bg-zinc-900 text-white  left-0 overflow-hidden"
+        className="w-full absolute bg-white z-30  h-0 top-[100%]  left-0 overflow-hidden"
       >
-        <div className=" w-full h-full">
-          <div className="text-5xl font-bold w-full h-screen flex justify-center items-center">
-            Section1
-          </div>
-          <div className="text-5xl  font-bold w-full h-screen flex justify-center items-center">
-            Section2
-          </div>
-          <div className="text-5xl  font-bold w-full h-screen flex justify-center items-center">
-            Section3
-          </div>
-        </div>
+        <PopularTrek />
+        <Service />
+        <Trending />
+        {/* <Marquee /> */}
+
+        <Footer />
       </div>
     </>
   );
