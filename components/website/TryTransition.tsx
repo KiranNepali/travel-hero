@@ -132,15 +132,6 @@ export default function TryTransition({}: Props) {
 
   const { contextSafe } = useGSAP();
 
-  useGSAP(() => {
-    // text animation
-    gsap.from(".slide1Text", {
-      opacity: 0,
-      duration: 0.8,
-      top: "50%",
-      ease: Expo.easeInOut,
-    });
-  });
   const handleScroll1 = contextSafe((e: any) => {
     const delta = e.deltaY;
     if (delta > 0) {
@@ -183,11 +174,17 @@ export default function TryTransition({}: Props) {
       );
 
       // text animation
-      gsap.from(".slide2Text", {
-        opacity: 0,
+      gsap.to(".slide2Text", {
+        opacity: 1,
         duration: 0.8,
-        top: "50%",
-        ease: Expo.easeInOut,
+        top: "30%",
+        ease: "power4.inOut",
+      });
+      gsap.to(".slide1Text", {
+        opacity: 0,
+        duration: 0.3,
+        top: "60%",
+        ease: "power4.inOut",
       });
     }
   });
@@ -225,6 +222,20 @@ export default function TryTransition({}: Props) {
         top: "50%",
         ease: Expo.easeInOut,
       });
+
+      // text animation
+      gsap.to(".slide3Text", {
+        opacity: 1,
+        duration: 0.8,
+        top: "30%",
+        ease: "power4.inOut",
+      });
+      gsap.to(".slide2Text", {
+        opacity: 0,
+        duration: 0.3,
+        top: "60%",
+        ease: "power4.inOut",
+      });
     }
     // scroll up
     if (delta < 0) {
@@ -247,6 +258,20 @@ export default function TryTransition({}: Props) {
         x: "0",
         duration: 2,
         ease: "power4",
+      });
+
+      // text animation
+      gsap.to(".slide1Text", {
+        opacity: 1,
+        duration: 0.8,
+        top: "30%",
+        ease: "power4.inOut",
+      });
+      gsap.to(".slide2Text", {
+        opacity: 0,
+        duration: 0.3,
+        top: "60%",
+        ease: "power4.inOut",
       });
     }
   });
@@ -278,11 +303,17 @@ export default function TryTransition({}: Props) {
       });
 
       // text animation
-      gsap.from(".slide4Text", {
-        opacity: 0,
+      gsap.to(".slide4Text", {
+        opacity: 1,
         duration: 0.8,
-        top: "50%",
-        ease: Expo.easeInOut,
+        top: "30%",
+        ease: "power4.inOut",
+      });
+      gsap.to(".slide3Text", {
+        opacity: 0,
+        duration: 0.3,
+        top: "60%",
+        ease: "power4.inOut",
       });
     }
 
@@ -307,6 +338,19 @@ export default function TryTransition({}: Props) {
         x: "-100%",
         duration: 2,
         ease: "power4",
+      });
+      // text animation
+      gsap.to(".slide3Text", {
+        opacity: 0,
+        duration: 0.3,
+        top: "60%",
+        ease: "power4.inOut",
+      });
+      gsap.to(".slide2Text", {
+        opacity: 1,
+        duration: 0.8,
+        top: "30%",
+        ease: "power4.inOut",
       });
     }
   });
@@ -350,6 +394,19 @@ export default function TryTransition({}: Props) {
         x: "-200%",
         duration: 2,
         ease: "power4",
+      });
+      //  text animation
+      gsap.to(".slide4Text", {
+        opacity: 0,
+        duration: 0.3,
+        top: "60%",
+        ease: "power4.inOut",
+      });
+      gsap.to(".slide3Text", {
+        opacity: 1,
+        duration: 0.8,
+        top: "30%",
+        ease: "power4.inOut",
       });
       gsap.to(openContainerRef.current, {
         height: "0",
@@ -446,11 +503,11 @@ export default function TryTransition({}: Props) {
             ref={slider2Ref}
             className="min-w-[100vw] slide2  h-full relative  flex justify-center items-center"
           >
-            <span className="text-[3rem] md:text-[8rem] slide2Text  absolute top-[30%] left-[50%] -translate-x-[50%] -translate-y-[50%]  font-black">
+            <span className="text-[3rem] md:text-[8rem] slide2Text opacity-0  absolute top-[70%] left-[50%] -translate-x-[50%] -translate-y-[50%] slider2Text font-black">
               PHOKSUNDO
             </span>
 
-            <div className="w-full h-screen  overflow-hidden">
+            <div className="w-full h-screen   overflow-hidden">
               <Image
                 src={HeroPhoksundoBg}
                 alt="everest-image"
@@ -464,7 +521,7 @@ export default function TryTransition({}: Props) {
             onWheel={handleScroll3}
             className="slide3  min-w-[100vw] relative h-full flex justify-center items-center"
           >
-            <span className="text-[3rem] md:text-[8rem] slide3Text  absolute top-[30%] left-[50%] -translate-x-[50%] -translate-y-[50%]  font-black">
+            <span className="text-[3rem] md:text-[8rem] slide3Text opacity-0 absolute top-[60%] left-[50%] -translate-x-[50%] -translate-y-[50%]  font-black">
               MUSTANG
             </span>
             <div className="w-full h-screen  overflow-hidden">
@@ -481,7 +538,7 @@ export default function TryTransition({}: Props) {
             onWheel={handleScroll4}
             className="min-w-[100vw] slide4 relative h-full  flex justify-center items-center"
           >
-            <span className="text-[3rem] md:text-[8rem] slide4Text  absolute top-[30%] left-[50%] -translate-x-[50%] -translate-y-[50%]  font-black">
+            <span className="text-[3rem] md:text-[8rem] slide4Text opacity-0 absolute top-[60%] left-[50%] -translate-x-[50%] -translate-y-[50%]  font-black">
               TILICHO
             </span>
             <div className=" w-full h-screen  overflow-hidden">

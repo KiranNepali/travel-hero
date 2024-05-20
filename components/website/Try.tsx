@@ -61,18 +61,18 @@
 //         duration: 2,
 //         ease: "power4",
 //       });
-//       gsap.to(".slide3Text", {
-//         opacity: 1,
-//         duration: 0.8,
-//         top: "30%",
-//         ease: "power4.inOut",
-//       });
-//       gsap.to(".slide2Text", {
-//         opacity: 0,
-//         duration: 0.3,
-//         top: "60%",
-//         ease: "power4.inOut",
-//       });
+    //   gsap.to(".slide3Text", {
+    //     opacity: 1,
+    //     duration: 0.8,
+    //     top: "30%",
+    //     ease: "power4.inOut",
+    //   });
+    //   gsap.to(".slide2Text", {
+    //     opacity: 0,
+    //     duration: 0.3,
+    //     top: "60%",
+    //     ease: "power4.inOut",
+    //   });
 //     }
 //     if (delta < 0) {
 //       // Scrolling up
@@ -81,18 +81,18 @@
 //         duration: 2,
 //         ease: "power4",
 //       });
-//       gsap.to(".slide1Text", {
-//         opacity: 1,
-//         duration: 0.8,
-//         top: "30%",
-//         ease: "power4.inOut",
-//       });
-//       gsap.to(".slide2Text", {
-//         opacity: 0,
-//         duration: 0.3,
-//         top: "60%",
-//         ease: "power4.inOut",
-//       });
+    //   gsap.to(".slide1Text", {
+    //     opacity: 1,
+    //     duration: 0.8,
+    //     top: "30%",
+    //     ease: "power4.inOut",
+    //   });
+    //   gsap.to(".slide2Text", {
+    //     opacity: 0,
+    //     duration: 0.3,
+    //     top: "60%",
+    //     ease: "power4.inOut",
+    //   });
 //     }
 //   });
 
