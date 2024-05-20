@@ -445,7 +445,7 @@ export default function TryTransition({}: Props) {
       >
         <div className="flex justify-center items-center   flex-col h-full w-full">
           <div className="flex flex-col md:flex-row justify-center h-full items-center gap-[4%] w-full text-3xl font-medium">
-            {["About", "Purchased Confirm", "Contacgggg"].map((item, index) => (
+            {["About", "Purchased Confirm", "Contact"].map((item, index) => (
               <div
                 key={index}
                 onMouseEnter={() => handleHoverNav(index)}
